@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Sound/Fire_Shoot.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sound/Flower_Parry.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sound/EvilSpreader_Shoot.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sound/SplashSound.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/Player_Move.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound/EvilDrop_Shoot.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sound/GameStart.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/WaveClear.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sound/GameOver.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sound/Player_Hit.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sound/Enemy_Death.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/TutorialStart.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sound/Enemy_Hit.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sound/Reflect_Sound.wav" type="AudioStream" id=14]
+
+[node name="SoundPlayer" type="Node"]
+
+[node name="PlayerMove_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -48.465
+pitch_scale = 0.5
+
+[node name="FireShoot_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -20.0
+
+[node name="FlowerParry_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.097
+
+[node name="EnemyHit_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -24.233
+
+[node name="EnemyDeath_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -24.233
+
+[node name="PlayerHit_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -20.0
+
+[node name="Reflect_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -19.184
+
+[node name="SpreaderEnemyShoot_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -26.252
+pitch_scale = 0.43
+
+[node name="TearEnemyShoot_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.194
+
+[node name="WaveClear_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.097
+
+[node name="GameOver_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
+
+[node name="GameStart_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+
+[node name="TutorialStart_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -10.0
+
+[node name="Splash_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.097
