@@ -1,0 +1,128 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/m3x6.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/visuals/text_provide_left_margin.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/visuals/static_visual/static_visual.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 3 )
+
+[node name="HUD" type="Node2D"]
+
+[node name="ForegroundHUD" parent="." instance=ExtResource( 6 )]
+position = Vector2( 100, 100 )
+animation = "ForegroundHUD"
+
+[node name="FlowerLives" type="Node2D" parent="."]
+
+[node name="Heart1" parent="FlowerLives" instance=ExtResource( 6 )]
+position = Vector2( 9, 206 )
+animation = "IconHeart"
+centered = false
+
+[node name="Heart2" parent="FlowerLives" instance=ExtResource( 6 )]
+position = Vector2( 29, 206 )
+animation = "IconHeart"
+centered = false
+
+[node name="Heart3" parent="FlowerLives" instance=ExtResource( 6 )]
+position = Vector2( 49, 206 )
+animation = "IconHeart"
+centered = false
+
+[node name="FireLives" type="Node2D" parent="."]
+
+[node name="Heart1" parent="FireLives" instance=ExtResource( 6 )]
+position = Vector2( -21, 180 )
+animation = "IconHeart"
+centered = false
+
+[node name="Heart2" parent="FireLives" instance=ExtResource( 6 )]
+position = Vector2( -21, 160 )
+animation = "IconHeart"
+centered = false
+
+[node name="Heart3" parent="FireLives" instance=ExtResource( 6 )]
+position = Vector2( -21, 140 )
+animation = "IconHeart"
+centered = false
+
+[node name="TextElements" type="Node2D" parent="."]
+
+[node name="WaveLabel" type="RichTextLabel" parent="TextElements"]
+margin_left = 153.0
+margin_top = 200.0
+margin_right = 193.0
+margin_bottom = 215.0
+theme = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+text = "Wave:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaveNumber" type="RichTextLabel" parent="TextElements"]
+margin_left = 199.0
+margin_top = 200.0
+margin_right = 225.0
+margin_bottom = 215.0
+grow_horizontal = 0
+theme = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+meta_underlined = false
+text = "1"
+scroll_active = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="RichTextLabel" parent="TextElements"]
+margin_left = 151.0
+margin_top = 210.0
+margin_right = 191.0
+margin_bottom = 225.0
+theme = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="TextElements"]
+margin_left = 19.0
+margin_top = -27.0
+margin_right = 198.0
+margin_bottom = -12.0
+theme = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "~ TO WORK TOGETHER DESPITE DIFFERENCE! ~"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="RichTextLabel" parent="TextElements"]
+margin_left = 41.0
+margin_top = -16.0
+margin_right = 220.0
+margin_bottom = -1.0
+theme = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "GO MISS FLAME! GO MR. FLOWER!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreNumber" type="RichTextLabel" parent="TextElements"]
+margin_left = 199.0
+margin_top = 210.0
+margin_right = 243.0
+margin_bottom = 225.0
+theme = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "0"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

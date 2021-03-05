@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/game_element/enemy/droplet_enemy/droplet_enemy_visuals/droplet_enemy_flash.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/game_element/enemy/balloon_enemy/balloon_enemy_visuals/balloon_enemy_flash.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/game_element/enemy/tide_enemy/tide_enemy_flash.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/game_element/enemy/tear_enemy/tear_enemy_normal/tear_enemy_normal_visuals/tear_enemy_normal_flash.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/game_element/enemy/spreader_enemy/spreader_enemy_visuals/spreader_enemy_flash.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/visuals/particle/enemy_flash_particle/enemy_flash_particle.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "BalloonEnemy",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "TearEnemyNormal",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "DropletEnemy",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "TideEnemy",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "SpreaderEnemy",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "TearEnemyShielded",
+"speed": 30.0
+} ]
+
+[node name="EnemyFlashParticle" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "TearEnemyShielded"
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

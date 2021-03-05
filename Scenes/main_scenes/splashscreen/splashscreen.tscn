@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/visuals/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/main_scenes/splashscreen/splashscreen.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/m3x6.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Scenes/main_scenes/main_camera.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/visuals/curtain/curtain.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 6 )
+
+[node name="SplashScreen" type="Node2D"]
+position = Vector2( 25, 25 )
+script = ExtResource( 3 )
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2( 100, 100 )
+current = true
+script = ExtResource( 7 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="WaveNumber" parent="HUD/TextElements" index="1"]
+margin_left = 184.0
+margin_right = 227.0
+text = "Title!"
+
+[node name="Title" parent="HUD/TextElements" index="3"]
+margin_left = 35.0
+margin_right = 214.0
+text = "~ WELCOME TO A NEW ADVENTURE! ~"
+
+[node name="Title2" parent="HUD/TextElements" index="4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 57.0
+margin_right = 148.0
+text = "EMBRACE THE CHALLENGE!"
+
+[node name="ScoreNumber" parent="HUD/TextElements" index="5"]
+margin_left = 184.0
+margin_right = 228.0
+text = "Zilch!"
+
+[node name="Author_Text" type="RichTextLabel" parent="."]
+margin_left = 59.0
+margin_top = 86.0
+margin_right = 142.0
+margin_bottom = 100.0
+theme = SubResource( 1 )
+text = "A game by KeepTrying"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Curtain" parent="." instance=ExtResource( 9 )]
+
+[editable path="HUD"]

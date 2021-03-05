@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/visuals/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/main_scenes/titlescreen/titlescreen_title/titlescreen_title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/main_scenes/titlescreen/titlescreen_portrait_flower/titlescreen_portrait_flower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/main_scenes/titlescreen/titlescreen_portrait_flame/titlescreen_portrait_flame.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/m3x6.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Scenes/main_scenes/main_camera.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/main_scenes/titlescreen/titlescreen.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/visuals/curtain/curtain.tscn" type="PackedScene" id=9]
+
+
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 6 )
+
+[node name="TitleScreen" type="Node2D"]
+position = Vector2( 25, 25 )
+script = ExtResource( 8 )
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2( 100, 100 )
+current = true
+script = ExtResource( 7 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="WaveNumber" parent="HUD/TextElements" index="1"]
+margin_left = 184.0
+margin_right = 227.0
+text = "Title!"
+
+[node name="Title" parent="HUD/TextElements" index="3"]
+margin_left = 35.0
+margin_right = 214.0
+text = "~ WELCOME TO A NEW ADVENTURE! ~"
+
+[node name="Title2" parent="HUD/TextElements" index="4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 57.0
+margin_right = 148.0
+text = "EMBRACE THE CHALLENGE!"
+
+[node name="ScoreNumber" parent="HUD/TextElements" index="5"]
+margin_left = 184.0
+margin_right = 228.0
+text = "Zilch!"
+
+[node name="TitleScreen_Title" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2, 1 )
+
+[node name="TitleScreen_Flame" parent="." instance=ExtResource( 5 )]
+
+[node name="TitleScreen_Flower" parent="." instance=ExtResource( 4 )]
+
+[node name="PressStart_Text" type="RichTextLabel" parent="."]
+margin_left = 66.0
+margin_top = 74.0
+margin_right = 144.0
+margin_bottom = 88.0
+theme = SubResource( 1 )
+text = "PRESS MOUSE BUTTON!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Curtain" parent="." instance=ExtResource( 9 )]
+
+[editable path="HUD"]

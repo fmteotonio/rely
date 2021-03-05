@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/main_scenes/tutorial/tutorial_visuals/panel2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/visuals/static_visual/static_visual.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/visuals/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/main_scenes/titlescreen/titlescreen_title/titlescreen_title.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/main_scenes/titlescreen/titlescreen_portrait_flame/titlescreen_portrait_flame.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/main_scenes/titlescreen/titlescreen_portrait_flower/titlescreen_portrait_flower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/main_scenes/tutorial/tutorial_visuals/panel1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/main_scenes/tutorial/tutorial_visuals/panel3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/main_scenes/tutorial/tutorial_visuals/panel4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/autoloads/globals/globals.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Fonts/m3x6.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Scenes/main_scenes/main_camera.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/main_scenes/tutorial/tutorial.gd" type="Script" id=14]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 12 )
+
+[node name="Tutorial" type="Node2D"]
+position = Vector2( 25, 25 )
+script = ExtResource( 14 )
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2( 100, 100 )
+current = true
+script = ExtResource( 13 )
+
+[node name="TitleScreen_Flame" parent="." instance=ExtResource( 6 )]
+
+[node name="TitleScreen_Flower" parent="." instance=ExtResource( 7 )]
+
+[node name="TitleScreen_Title" parent="." instance=ExtResource( 5 )]
+
+[node name="BackgroundTransparent" parent="." instance=ExtResource( 2 )]
+position = Vector2( 100, 100 )
+animation = "BackgroundTransparent"
+
+[node name="Panel1" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="Panel2" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="Panel3" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Panel4" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="PressStart_Text" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 112.0
+margin_top = 185.0
+margin_right = 199.0
+margin_bottom = 199.0
+theme = SubResource( 1 )
+text = "PRESS MOUSE TO BEGIN!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Bullets" type="Node2D" parent="Entities"]
+
+[node name="TearTargetPosition" type="Position2D" parent="Entities"]
+
+[node name="SpreaderTargetPosition" type="Position2D" parent="Entities"]
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="WaveNumber" parent="HUD/TextElements" index="1"]
+margin_left = 181.0
+margin_right = 224.0
+text = "Learn!"
+
+[node name="Title" parent="HUD/TextElements" index="3"]
+margin_left = 25.0
+margin_right = 204.0
+text = "~ LEARN THE ROPES BEFORE DIVING IN ~"
+
+[node name="Title2" parent="HUD/TextElements" index="4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 46.0
+margin_right = 175.0
+text = "IT'S PAYING ATTENTION TIME!!"
+
+[node name="ScoreNumber" parent="HUD/TextElements" index="5"]
+margin_left = 185.0
+margin_right = 229.0
+text = "Nada!"
+
+[node name="Globals" parent="." instance=ExtResource( 11 )]
+
+[editable path="HUD"]
