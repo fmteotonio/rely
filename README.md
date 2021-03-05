@@ -1,10 +1,10 @@
 # Rely
 
-Rely was done for the 2020 edition of the Extra Credits Game Jam (#ExtraJam2020) in 72 hours, under the theme Take Care. It is an arcade score-chasing Shooter in which you control two characters that must take care of each other in order to survive the incoming enemy waves. One of them can only shoot, while the other can only block incoming bullets, providing an asymmetrical control experience. Survive against the incoming waves of enemies and try to reach for an high score!
+Rely was done for the 2020 edition of the [Extra Credits Game Jam](https://itch.io/jam/extra-credits-game-jam-6) (#ExtraJam2020) in 72 hours, under the theme **Take Care**. It is an arcade score-chasing Shooter in which you control two characters that must take care of each other in order to survive the incoming enemy waves. One of them can only shoot, while the other can only block incoming bullets, providing an asymmetrical control experience. Survive against the incoming waves of enemies and try to reach for an high score!
 
-Besides being packed with hand-eye coordination testing, the game also currently features 6 different emenies, including a boss, each with different attack patterns and animations.
+Besides being packed with hand-eye coordination testing, the game also currently features **6 different enemies**, including a **boss**, each with different attack patterns and animations.
 
-All assets used for this game, except the font which is m3x6 by Daniel Linssen under Creative Commons.
+_All assets used for this game, except the font which is m3x6 by Daniel Linssen under Creative Commons._
 
 Rely is currently playable @ https://keeptrying.itch.io/rely
 
