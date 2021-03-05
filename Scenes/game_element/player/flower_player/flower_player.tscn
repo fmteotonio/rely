@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/game_element/player/flower_player/flower_player_visuals/FlowerPlayerAnimations.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scenes/game_element/player/flower_player/flower_player.gd" type="Script" id=4]
+
+
+
+
+
+
+
+
+
+
+[node name="FlowerPlayer" type="Area2D"]
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "Active"
+playing = true
+
+[node name="SmallCollision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 5, 7, -5, 7, -7, 5, -7, -5, -5, -7, 5, -7, 7, -5, 7, 5 )
+
+[node name="BigCollision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -9, 16, 9, 16, 13, 13, 16, 9, 16, -9, 13, -13, 9, -16, -9, -16, -13, -13, -16, -9, -16, 9, -13, 13 )
+disabled = true
+[connection signal="area_entered" from="." to="." method="_on_Flower_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
